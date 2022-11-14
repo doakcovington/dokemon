@@ -3,6 +3,7 @@
 
 import logo from './logo.svg';
 import './App.css';
+import Sets from './components/sets'
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
           Howdy!
         </p>
       </header>
+      <body>
+        <Sets/>
+      </body>
     </div>
   );
 }
