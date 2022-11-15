@@ -27,7 +27,7 @@ const Sets: React.FC = () => {
       (result) => {
         console.log(result.data)
         setIsLoaded(true)
-        setItems(result.data)
+        setItems(result.data.data)
       },
       (error) => {
         setIsLoaded(true);
@@ -35,20 +35,22 @@ const Sets: React.FC = () => {
       }
     )
   }, [])
-
+  console.log(typeof items)
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Loading Sets</div>;
   } else {
     return (
-      <ul>
-        {items.map((items: Set)  => (
-          <li key={items.id}>
-            {items.name}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {items.map((items: Set)  => (
+            <li key={items.id}>
+              {items.name}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }
